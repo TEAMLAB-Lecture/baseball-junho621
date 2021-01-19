@@ -255,9 +255,10 @@ def is_no(one_more_input):
     # ==================================
     return result
 
-
+flag = 0
 def main():
-    print("Play Baseball")
+    if flag == 0:
+        print("Play Baseball")
     random_number = str(get_not_duplicated_three_digit_number())
     print("Random Number is : ", random_number)
     # ===Modify codes below=============
@@ -272,7 +273,6 @@ def main():
         user_input = input('Input guess number : ')
         tmp = get_strikes_or_ball(user_input, random_number)
     print(f'Strikes : {tmp[0]} , Balls : {tmp[1]}')
-    flag = 0
     while True:
         re = input('You win, one more(Y/N)? ')
         if is_yes(re):
