@@ -261,7 +261,6 @@ def main():
     print("Random Number is : ", random_number)
     # ===Modify codes below=============
     # 위의 코드를 포함하여 자유로운 수정이 가능함
-    flag2 = 0
     user_input = input('Input guess number : ')
     if user_input == '0':
         print("Thank you for using this program")
@@ -275,8 +274,6 @@ def main():
             print("Thank you for using this program")
             print("End of the Game")
             return
-    if flag2 == 1:
-        break
 
     tmp = get_strikes_or_ball(user_input, random_number)
     while tmp[0] != 3:
@@ -288,8 +285,6 @@ def main():
             print("End of the Game")
             return
         tmp = get_strikes_or_ball(user_input, random_number)
-    if flag2==1:
-        break
     print(f'Strikes : {tmp[0]} , Balls : {tmp[1]}')
     flag = 0
     while True:
