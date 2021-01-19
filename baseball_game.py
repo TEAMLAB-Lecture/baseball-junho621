@@ -266,7 +266,7 @@ def main():
     if user_input == '0':
         print("Thank you for using this program")
         print("End of the Game")
-        raise SystemExit, 0
+        raise SystemExit
 
     while not is_validated_number(user_input):
         print('Wrong Input, Input again')
@@ -274,7 +274,7 @@ def main():
         if user_input == '0':
             print("Thank you for using this program")
             print("End of the Game")
-            raise SystemExit, 0
+            raise SystemExit
 
     tmp = get_strikes_or_ball(user_input, random_number)
     while tmp[0] != 3:
@@ -283,7 +283,7 @@ def main():
         if user_input == '0':
             print("Thank you for using this program")
             print("End of the Game")
-            raise SystemExit, 0
+            raise SystemExit
         tmp = get_strikes_or_ball(user_input, random_number)
 
     print(f'Strikes : {tmp[0]} , Balls : {tmp[1]}')
@@ -295,7 +295,7 @@ def main():
         elif is_no(re) or re == '0':
             print("Thank you for using this program")
             print("End of the Game")
-            raise SystemExit, 0
+            raise SystemExit
         else:
             print('Wrong Input, Input again')
     # ==================================
