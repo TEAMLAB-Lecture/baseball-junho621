@@ -255,24 +255,43 @@ def is_no(one_more_input):
     # ==================================
     return result
 
-flag = 0
-def main(flag):
-    if flag == 0:
-        print("Play Baseball")
+def main():
+    print("Play Baseball")
     random_number = str(get_not_duplicated_three_digit_number())
     print("Random Number is : ", random_number)
     # ===Modify codes below=============
     # 위의 코드를 포함하여 자유로운 수정이 가능함
+    flag2 = 0
     user_input = input('Input guess number : ')
+    if user_input == '0':
+        print("Thank you for using this program")
+        print("End of the Game")
+        break
     while not is_validated_number(user_input):
         print('Wrong Input, Input again')
         user_input = input('Input guess number : ')
+        if user_input == '0':
+            flag2=1
+            print("Thank you for using this program")
+            print("End of the Game")
+            break
+    if flag2 == 1:
+        break
+
     tmp = get_strikes_or_ball(user_input, random_number)
     while tmp[0] != 3:
         print(f'Strikes : {tmp[0]} , Balls : {tmp[1]}')
         user_input = input('Input guess number : ')
+        if user_input == '0':
+            flag2=1
+            print("Thank you for using this program")
+            print("End of the Game")
+            break
         tmp = get_strikes_or_ball(user_input, random_number)
+    if flag2==1:
+        break
     print(f'Strikes : {tmp[0]} , Balls : {tmp[1]}')
+    flag = 0
     while True:
         re = input('You win, one more(Y/N)? ')
         if is_yes(re):
@@ -285,8 +304,8 @@ def main(flag):
         else:
             print('Wrong Input, Input again')
     if flag == 1:
-        main(flag)
+        main()
     # ==================================
 
 if __name__ == "__main__":
-    main(flag)
+    main()
