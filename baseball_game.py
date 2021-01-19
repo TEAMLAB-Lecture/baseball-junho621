@@ -277,6 +277,7 @@ def main():
         re = input('You win, one more(Y/N)? ')
         if is_yes(re):
             flag = 1
+            break
         elif is_no(re) or re == '0':
             print("Thank you for using this program")
             print("End of the Game")
