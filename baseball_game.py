@@ -285,20 +285,17 @@ def main():
             raise StopIteration
         tmp = get_strikes_or_ball(user_input, random_number)
     print(f'Strikes : {tmp[0]} , Balls : {tmp[1]}')
-    flag = 0
     while True:
         re = input('You win, one more(Y/N)? ')
         if is_yes(re):
-            flag = 1
+            main()
             break
         elif is_no(re) or re == '0':
             print("Thank you for using this program")
             print("End of the Game")
-            sys.exit()
+            break
         else:
             print('Wrong Input, Input again')
-    if flag == 1:
-        main()
     # ==================================
 
 if __name__ == "__main__":
