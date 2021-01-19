@@ -266,14 +266,14 @@ def main():
     if user_input == '0':
         print("Thank you for using this program")
         print("End of the Game")
-        sys.exit()
+        raise StopIteration
     while not is_validated_number(user_input):
         print('Wrong Input, Input again')
         user_input = input('Input guess number : ')
         if user_input == '0':
             print("Thank you for using this program")
             print("End of the Game")
-            sys.exit()
+            raise StopIteration
 
     tmp = get_strikes_or_ball(user_input, random_number)
     while tmp[0] != 3:
@@ -282,7 +282,7 @@ def main():
         if user_input == '0':
             print("Thank you for using this program")
             print("End of the Game")
-            sys.exit()
+            raise StopIteration
         tmp = get_strikes_or_ball(user_input, random_number)
     print(f'Strikes : {tmp[0]} , Balls : {tmp[1]}')
     flag = 0
