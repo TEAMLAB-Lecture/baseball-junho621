@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import random
+import sys
 
 
 def get_random_number():
@@ -265,25 +266,23 @@ def main():
     if user_input == '0':
         print("Thank you for using this program")
         print("End of the Game")
-        return
+        sys.exit()
     while not is_validated_number(user_input):
         print('Wrong Input, Input again')
         user_input = input('Input guess number : ')
         if user_input == '0':
-            flag2=1
             print("Thank you for using this program")
             print("End of the Game")
-            return
+            sys.exit()
 
     tmp = get_strikes_or_ball(user_input, random_number)
     while tmp[0] != 3:
         print(f'Strikes : {tmp[0]} , Balls : {tmp[1]}')
         user_input = input('Input guess number : ')
         if user_input == '0':
-            flag2=1
             print("Thank you for using this program")
             print("End of the Game")
-            return
+            sys.exit()
         tmp = get_strikes_or_ball(user_input, random_number)
     print(f'Strikes : {tmp[0]} , Balls : {tmp[1]}')
     flag = 0
@@ -295,7 +294,7 @@ def main():
         elif is_no(re) or re == '0':
             print("Thank you for using this program")
             print("End of the Game")
-            return
+            sys.exit()
         else:
             print('Wrong Input, Input again')
     if flag == 1:
