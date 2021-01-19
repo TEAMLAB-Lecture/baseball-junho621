@@ -256,7 +256,7 @@ def is_no(one_more_input):
     return result
 
 flag = 0
-def main():
+def main(flag):
     if flag == 0:
         print("Play Baseball")
     random_number = str(get_not_duplicated_three_digit_number())
@@ -285,8 +285,8 @@ def main():
         else:
             print('Wrong Input, Input again')
     if flag == 1:
-        main()
+        main(flag)
     # ==================================
 
 if __name__ == "__main__":
-    main()
+    main(flag)
